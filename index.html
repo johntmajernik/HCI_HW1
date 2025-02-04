@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Philadelphia</h1>
+        <div class="weather-icons">
+            <img src="cloud.png" alt="Cloudy">
+            <img src="cloud.png" alt="Cloudy">
+        </div>
+        <h2>60°</h2>
+        <p>Partly cloudy; Feels like 54°</p>
+
+        <div class="forecast">
+            <div class="row labels">
+                <span>Now</span> <span>3pm</span> <span>6pm</span> <span>9pm</span> <span>12am</span> <span>3am</span>
+            </div>
+            <div class="row">
+                <span>Precipitation</span> 
+                <span>10%</span> <span>12%</span> <span>5%</span> <span>0%</span> <span>0%</span> <span>0%</span>
+            </div>
+            <div class="row">
+                <span>Wind</span> 
+                <span>↓ 5kn</span> <span>↙ 4kn</span> <span>← 3kn</span> <span>↓ 4kn</span> <span>↓ 5kn</span> <span>↓ 4kn</span>
+            </div>
+        </div>
+
+        <div class="sun-info">
+            <span>First Light: 6:00</span>
+            <span>Sunrise: 6:30</span>
+            <span>Last Light: 7:00</span>
+            <span>Sunset: 6:30</span>
+        </div>
+
+        <h3>Tide</h3>
+        <canvas id="tideGraph"></canvas>
+    </div>
+
+    <script>
+        // Simple tide graph drawing
+        const canvas = document.getElementById("tideGraph");
+        const ctx = canvas.getContext("2d");
+        canvas.width = 250;
+        canvas.height = 100;
+        ctx.beginPath();
+        ctx.moveTo(0, 70);
+        ctx.bezierCurveTo(50, 20, 150, 80, 250, 40);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    </script>
+</body>
+</html>
